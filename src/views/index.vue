@@ -1,0 +1,46 @@
+<script setup>
+import {ref} from "vue";
+import {useRouter, useRoute} from "vue-router";
+
+let $router = useRouter();
+let $route = useRoute();
+let value = ref();
+const onSearch = () => {
+  $router.push("/match",)
+}
+</script>
+
+<template>
+  <div class="enter-box">
+    <div class="enter-height-box">
+      <div class="enter-input">
+        <a-input-search
+          v-model:value="value"
+          placeholder="请输入手机号码"
+          enter-button="查看简历"
+          size="large"
+          @search="onSearch"
+        />
+      </div>
+    </div>
+  </div>
+</template>
+
+<style scoped>
+.enter-box {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(125deg, #0c090c, #1c061c, #2a0330);
+}
+.enter-height-box {
+  width: 100vw;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.enter-input {
+  width: 300px;
+}
+</style>
