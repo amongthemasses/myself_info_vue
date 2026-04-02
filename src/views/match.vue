@@ -1,6 +1,7 @@
 <script setup>
 import {ref} from "vue";
 import {useRouter, useRoute} from "vue-router";
+import Background from "@/components/background.vue";
 
 const $router = useRouter();
 const $route = useRoute();
@@ -17,20 +18,22 @@ const onClickSetting = () => {
 </script>
 
 <template>
-  <div class="box">
-    <div class="match-box">
-      <div class="mid-box">
-        <div class="match-c match-show">
-          <img class="match-image" src="/shows.png" alt="">
-          <a-button type="primary" v-on:click="onClickShow">{{ showText }}</a-button>
-        </div>
-        <div class="match-c match-setting">
-          <img class="match-image" src="/setting.png" alt="">
-          <a-button type="primary" v-on:click="onClickSetting">{{ settingText }}</a-button>
+  <Background>
+    <div class="box">
+      <div class="match-box">
+        <div class="mid-box">
+          <div class="match-c match-show">
+            <img class="match-image" src="/shows.png" alt="">
+            <a-button type="primary" v-on:click="onClickShow">{{ showText }}</a-button>
+          </div>
+          <div class="match-c match-setting">
+            <img class="match-image" src="/setting.png" alt="">
+            <a-button type="primary" v-on:click="onClickSetting">{{ settingText }}</a-button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </Background>
 </template>
 
 <style scoped>
@@ -39,7 +42,6 @@ const onClickSetting = () => {
   height: 100vh;
   display: flex;
   justify-content: center;
-  background: linear-gradient(125deg, #0c090c, #1c061c, #2a0330);
 }
 
 .match-box {

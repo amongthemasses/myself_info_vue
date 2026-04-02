@@ -1,5 +1,6 @@
 <script setup>
 import {ref, reactive} from 'vue'
+import ShowHome from '@/components/show_home.vue'
 
 let liList = reactive([
   {name: "首页", id: "show_home"},
@@ -18,8 +19,10 @@ const scrollToAnchor = (item) => {
 </script>
 
 <template>
-  <div>
-    <div id="show_home" class="container show-home">1</div>
+  <div class="outside-box">
+    <div id="show_home" class="container show-home">
+      <ShowHome/>
+    </div>
     <div id="show_skills" class="container show-skills">2</div>
     <div id="show_project" class="container show-project">3</div>
     <div id="show_exp" class="container show-exp">4</div>
@@ -38,7 +41,6 @@ const scrollToAnchor = (item) => {
 <style scoped>
 .container {
   width: 100%;
-  height: 100vh;
 }
 
 .navbar-box {
@@ -61,5 +63,35 @@ const scrollToAnchor = (item) => {
 .nav-item-span {
   display: inline-block;
   cursor: pointer;
+}
+
+.outside-box {
+  width: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+/* 滚动条容器 */
+.outside-box::-webkit-scrollbar {
+  width: 13px;
+  height: 13px;
+}
+
+/* 滚动条轨道 */
+.outside-box::-webkit-scrollbar-track {
+  background: #1a1a2e; /* 深色轨道 */
+}
+
+/* 滚动条滑块 */
+.outside-box::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #4c1096, #a115e8); /* 紫黑渐变 */
+  border-radius: 10px;
+  border: 2px solid #1a1a2e; /* 与轨道同色，形成凹槽感 */
+}
+
+/* 悬浮时的滑块 */
+.outside-box::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #5a14b3, #b020f8);
 }
 </style>
