@@ -1,6 +1,6 @@
 <script setup>
 import Background from "@/components/background.vue";
-import {reactive, onMounted, ref, onDeactivated} from "vue";
+import { reactive, onMounted, ref, onDeactivated } from "vue";
 
 let infos = reactive({
   imgUrl: "/show_head.jpg",
@@ -46,7 +46,7 @@ onDeactivated(() => {
   <Background>
     <div class="show-home">
       <div class="image-box">
-        <img ref="headImg" class="image-img" :src="infos.imgUrl"/>
+        <img ref="headImg" class="image-img" :src="infos.imgUrl" />
       </div>
       <div>
         <h1 class="infos-name">{{ infos.name }}</h1>
@@ -60,30 +60,33 @@ onDeactivated(() => {
       <ul class="infos-call">
         <li class="infos-call-item">
           <p class="infos-call-item-p">
-            <span></span>
+            <span class="iconfont icon-dingwei"></span>
             <span class="infos-call-item-text">{{ infos.address }}</span>
           </p>
         </li>
         <li class="infos-call-item">
           <p class="infos-call-item-p">
-            <span></span>
+            <span class="iconfont icon-youjian"></span>
             <span class="infos-call-item-text">{{ infos.emailAddress }}</span>
           </p>
         </li>
         <li class="infos-call-item">
           <p class="infos-call-item-p">
-            <span></span>
+            <span class="iconfont icon-dianhua"></span>
             <span class="infos-call-item-text">{{ infos.phoneNumber }}</span>
           </p>
         </li>
       </ul>
       <ul class="infos-link">
-        <li class="infos-link-item" @click="()=>{ createAtoA(infos.websiteUrl)}">
-          <span class="infos-link-item-span">
+        <li class="infos-link-item" @click="() => { createAtoA(infos.githubUrl) }">
+          <span class="infos-link-item-span ">
+            <i style="color:#f5f5f5; font-size: 30px;"  class="iconfont icon-github"></i>
           </span>
         </li>
-        <li class="infos-link-item" @click="()=>{ createAtoA(infos.githubUrl)}">
-          <span class="infos-link-item-span"></span>
+        <li class="infos-link-item" @click="() => { createAtoA(infos.websiteUrl) }">
+          <span class="infos-link-item-span">
+            <i style="color:#f5f5f5; font-size: 30px;" class="iconfont icon-network"></i>
+          </span>
         </li>
       </ul>
     </div>
@@ -118,8 +121,8 @@ onDeactivated(() => {
   border-radius: 50%;
   border: 2px solid #4c1096;
   box-shadow: 0 5px 24px #8a2be24d,
-  0 5px 24px #8a2be24d,
-  0 5px 24px #8a2be24d;
+    0 5px 24px #8a2be24d,
+    0 5px 24px #8a2be24d;
   transition: all 2s linear;
 }
 
@@ -224,5 +227,8 @@ onDeactivated(() => {
   border-radius: 10px;
   background: #14142866;
   border: 1px solid #5050784d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 </style>

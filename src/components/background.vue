@@ -12,26 +12,22 @@
 .bg-box {
   width: 100%;
   height: 100%;
-  background: linear-gradient(125deg, #4c0344, #230b37, #1a022c, #4c0344);
-  background-size: 600% 100%;
-  animation: cyberGradient 15s ease infinite;
+  background: linear-gradient(135deg,
+      #2d1b55 0%,
+      #1a3a5a 30%,
+      #3a1a3a 100%);
+  animation: bg-breathe 3s ease-in-out infinite;
 }
 
-@keyframes cyberGradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  25% {
-    background-position: 25% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  75% {
-    background-position: 25% 50%;
-  }
+@keyframes bg-breathe {
+
+  0%,
   100% {
-    background-position: 0% 50%;
+    filter: brightness(0.9);
+  }
+
+  50% {
+    filter: brightness(1.15);
   }
 }
 </style>

@@ -1,0 +1,114 @@
+{
+  "id": "5154573",
+  "name": "myselfInfoVue",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "316143",
+      "name": "plane",
+      "font_class": "7",
+      "unicode": "e606",
+      "unicode_decimal": 58886
+    },
+    {
+      "icon_id": "1490627",
+      "name": "定位",
+      "font_class": "dingwei",
+      "unicode": "e64f",
+      "unicode_decimal": 58959
+    },
+    {
+      "icon_id": "1766511",
+      "name": "符号-html",
+      "font_class": "html",
+      "unicode": "e6a0",
+      "unicode_decimal": 59040
+    },
+    {
+      "icon_id": "3092330",
+      "name": "勋章",
+      "font_class": "xunzhang",
+      "unicode": "e796",
+      "unicode_decimal": 59286
+    },
+    {
+      "icon_id": "4294081",
+      "name": "公文包2",
+      "font_class": "gongwenbao",
+      "unicode": "e789",
+      "unicode_decimal": 59273
+    },
+    {
+      "icon_id": "4766685",
+      "name": "home",
+      "font_class": "home",
+      "unicode": "e7c6",
+      "unicode_decimal": 59334
+    },
+    {
+      "icon_id": "5387731",
+      "name": "邮件",
+      "font_class": "youjian",
+      "unicode": "eb44",
+      "unicode_decimal": 60228
+    },
+    {
+      "icon_id": "11372686",
+      "name": "日历",
+      "font_class": "rili",
+      "unicode": "e8b4",
+      "unicode_decimal": 59572
+    },
+    {
+      "icon_id": "12385018",
+      "name": "下载",
+      "font_class": "xiazai",
+      "unicode": "e626",
+      "unicode_decimal": 58918
+    },
+    {
+      "icon_id": "15644304",
+      "name": "扳手",
+      "font_class": "banshou",
+      "unicode": "e6b9",
+      "unicode_decimal": 59065
+    },
+    {
+      "icon_id": "15644382",
+      "name": "团队",
+      "font_class": "tuandui",
+      "unicode": "e6cb",
+      "unicode_decimal": 59083
+    },
+    {
+      "icon_id": "16613328",
+      "name": "network",
+      "font_class": "network",
+      "unicode": "e67a",
+      "unicode_decimal": 59002
+    },
+    {
+      "icon_id": "16959607",
+      "name": "元数据项",
+      "font_class": "shujuku_jurassic",
+      "unicode": "e8bd",
+      "unicode_decimal": 59581
+    },
+    {
+      "icon_id": "19418425",
+      "name": "github",
+      "font_class": "github",
+      "unicode": "e728",
+      "unicode_decimal": 59176
+    },
+    {
+      "icon_id": "25964419",
+      "name": "电话",
+      "font_class": "dianhua",
+      "unicode": "e65f",
+      "unicode_decimal": 58975
+    }
+  ]
+}
