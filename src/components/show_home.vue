@@ -3,7 +3,7 @@ import Background from "@/components/background.vue";
 import { reactive, onMounted, ref, onDeactivated } from "vue";
 
 let infos = reactive({
-  imgUrl: "/show_head.jpg",
+  imgUrl: "/show_head.png",
   name: "刘彬",
   titleOne: "Nodejs前端工程师",
   titleTwo: "5年前端开发经验，专注于构建高性能、可维护的 Web 应用。热衷于探索新技术，追求代码质量与用户体验的完美平衡。",
@@ -28,7 +28,7 @@ onMounted(() => {
   timer.value = setInterval(() => {
     if (headImg.value) {
       if (onTop.value) {
-        headImg.value.style.top = "-50px";
+        headImg.value.style.top = "-40px";
         onTop.value = false;
       } else {
         headImg.value.style.top = "0px";
@@ -60,19 +60,19 @@ onDeactivated(() => {
       <ul class="infos-call">
         <li class="infos-call-item">
           <p class="infos-call-item-p">
-            <span class="iconfont icon-dingwei"></span>
+            <span style="color:#ff1493; font-size: 20px;" class="iconfont icon-dingwei"></span>
             <span class="infos-call-item-text">{{ infos.address }}</span>
           </p>
         </li>
         <li class="infos-call-item">
           <p class="infos-call-item-p">
-            <span class="iconfont icon-youjian"></span>
+            <span style="color:#ff1493; font-size: 20px;" class="iconfont icon-youjian"></span>
             <span class="infos-call-item-text">{{ infos.emailAddress }}</span>
           </p>
         </li>
         <li class="infos-call-item">
           <p class="infos-call-item-p">
-            <span class="iconfont icon-dianhua"></span>
+            <span style="color:#ff1493; font-size: 20px;" class="iconfont icon-dianhua"></span>
             <span class="infos-call-item-text">{{ infos.phoneNumber }}</span>
           </p>
         </li>
@@ -80,12 +80,12 @@ onDeactivated(() => {
       <ul class="infos-link">
         <li class="infos-link-item" @click="() => { createAtoA(infos.githubUrl) }">
           <span class="infos-link-item-span ">
-            <i style="color:#f5f5f5; font-size: 30px;"  class="iconfont icon-github"></i>
+            <i style="color:#f0f0ff; font-size: 20px;" class="iconfont icon-github"></i>
           </span>
         </li>
         <li class="infos-link-item" @click="() => { createAtoA(infos.websiteUrl) }">
           <span class="infos-link-item-span">
-            <i style="color:#f5f5f5; font-size: 30px;" class="iconfont icon-network"></i>
+            <i style="color:#f0f0ff; font-size: 20px;" class="iconfont icon-network"></i>
           </span>
         </li>
       </ul>
@@ -106,8 +106,8 @@ onDeactivated(() => {
 }
 
 .image-box {
-  width: 130px;
-  height: 130px;
+  width: 9rem;
+  height: 9rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -166,6 +166,7 @@ onDeactivated(() => {
   justify-content: center;
   align-items: center;
   box-sizing: border-box;
+  gap: 10px;
 }
 
 .infos-call-item {
@@ -174,20 +175,9 @@ onDeactivated(() => {
   justify-content: center;
   align-items: center;
   border-radius: 10px;
-  margin: 10px 0;
 }
 
-@media (max-width: 480px) {
-  .infos-call {
-    width: 75vw;
-  }
-
-  .infos-call-item {
-    width: 50%;
-  }
-}
-
-@media (min-width: 481px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 991px) {
   .infos-call {
     gap: 25px;
   }
@@ -203,7 +193,10 @@ onDeactivated(() => {
   background: #14142866;
   border: 1px solid #5050784d;
   border-radius: 10px;
-  padding: 6px 15px;
+  padding: 5px 20px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
 .infos-call-item-text {

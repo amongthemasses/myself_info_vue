@@ -11,18 +11,20 @@ import {RouterView} from "vue-router";
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  //font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
 }
 
 @media (max-width: 767px) {
   html {
-    font-size: 12px;
+    font-size: 14px;
   }
 }
 
 
 @media (min-width: 768px) and (max-width: 991px) {
   html {
-    font-size: 14px;
+    font-size: 15px;
   }
 }
 
