@@ -1,5 +1,5 @@
 <script setup>
-import {RouterView} from "vue-router";
+import { RouterView } from "vue-router";
 </script>
 
 <template>
@@ -11,8 +11,8 @@ import {RouterView} from "vue-router";
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  //font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+  /* font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; */
+  font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
 }
 
 @media (max-width: 767px) {
@@ -21,13 +21,11 @@ import {RouterView} from "vue-router";
   }
 }
 
-
 @media (min-width: 768px) and (max-width: 991px) {
   html {
     font-size: 15px;
   }
 }
-
 
 @media (min-width: 992px) {
   html {

@@ -1,5 +1,5 @@
 <script setup>
-import {ref, reactive} from "vue";
+import { ref, reactive } from "vue";
 import CtxBG from "@/components/ctx_bg.vue";
 import CtxTitles from "@/components/ctx_titles.vue";
 
@@ -22,7 +22,7 @@ let timeline = ref([
       "主导的性能优化使首屏加载速度提升 60%",
       "获得年度最佳团队奖",
       "培养 2 名初级工程师晋升为中级",
-    ]
+    ],
   },
   {
     position: "高级前端工程师",
@@ -40,7 +40,7 @@ let timeline = ref([
       "主导的性能优化使首屏加载速度提升 60%",
       "获得年度最佳团队奖",
       "培养 2 名初级工程师晋升为中级",
-    ]
+    ],
   },
   {
     position: "高级前端工程师",
@@ -58,7 +58,7 @@ let timeline = ref([
       // "主导的性能优化使首屏加载速度提升 60%",
       // "获得年度最佳团队奖",
       // "培养 2 名初级工程师晋升为中级",
-    ]
+    ],
   },
   {
     position: "高级前端工程师",
@@ -76,18 +76,17 @@ let timeline = ref([
       "主导的性能优化使首屏加载速度提升 60%",
       "获得年度最佳团队奖",
       "培养 2 名初级工程师晋升为中级",
-    ]
+    ],
   },
-
 ]);
 </script>
 
 <template>
   <CtxBG>
-    <CtxTitles :big-title="bigTitle" :sm-title="smTitle"/>
+    <CtxTitles :big-title="bigTitle" :sm-title="smTitle" />
     <div class="timeline">
       <a-timeline>
-        <a-timeline-item v-for="(item,key) in timeline" :key="key">
+        <a-timeline-item v-for="(item, key) in timeline" :key="key">
           <template #dot>
             <div class="timeline-dot"></div>
           </template>
@@ -114,13 +113,17 @@ let timeline = ref([
                   </div>
                 </div>
                 <ul class="position-ground-list">
-                  <li v-for="(it,ikey) in item.groundWork" :key="ikey">{{ it }}</li>
+                  <li v-for="(it, ikey) in item.groundWork" :key="ikey">
+                    {{ it }}
+                  </li>
                 </ul>
               </div>
               <div class="item-about-work" v-show="item.aboutWork.length > 0">
                 <p class="title">主要成就:</p>
                 <ul>
-                  <li v-for="(at,akey) in item.aboutWork" :key="akey">{{ at }}</li>
+                  <li v-for="(at, akey) in item.aboutWork" :key="akey">
+                    {{ at }}
+                  </li>
                 </ul>
               </div>
             </div>
@@ -147,10 +150,7 @@ let timeline = ref([
 /* 覆盖 Ant Design 默认的时间轴竖线 */
 .ant-timeline :deep(.ant-timeline-item-tail) {
   /* 紫蓝渐变竖线，从紫到蓝，垂直渐变 */
-  background: linear-gradient(180deg,
-  #2d1b55 0%,
-  #1a3a5a 30%,
-  #3a1a3a 100%);
+  background: linear-gradient(180deg, #2d1b55 0%, #1a3a5a 30%, #3a1a3a 100%);
   width: 2px;
   border-radius: 2px;
   border: none;
@@ -165,22 +165,24 @@ let timeline = ref([
   /* 紫蓝渐变背景，和竖线呼应 */
   background: linear-gradient(90deg, #9d27ff 0%, #00e0ff 100%);
   /* 发光光晕，模拟原图效果 */
-  box-shadow: 0 0 15px 3px rgba(157, 39, 255, 0.6), 0 0 25px 5px rgba(0, 224, 255, 0.4);
+  box-shadow:
+    0 0 15px 3px rgba(157, 39, 255, 0.6),
+    0 0 25px 5px rgba(0, 224, 255, 0.4);
   /* 居中对齐 */
   position: relative;
   top: 2px;
-  opacity: .7;
+  opacity: 0.7;
   animation: huahuahua 2s ease-in-out infinite;
 }
 @keyframes huahuahua {
   0% {
-    opacity: .7;
+    opacity: 0.7;
   }
   50% {
-    opacity: .6;
+    opacity: 0.6;
   }
   50% {
-    opacity: .5;
+    opacity: 0.5;
   }
 }
 .ant-timeline :deep(.ant-timeline-item-head) {
@@ -216,7 +218,6 @@ let timeline = ref([
   .line-item-inner {
     width: 816px;
   }
-
 }
 
 @media (min-width: 769px) and (max-width: 991px) {
@@ -236,14 +237,14 @@ let timeline = ref([
   flex-direction: row;
   align-items: center;
   gap: 12px;
-  margin-bottom: calc(.25rem * 4);
+  margin-bottom: calc(0.25rem * 4);
 }
 
 .line-item-inner .lineitem-title-icon {
-  height: calc(.25rem * 10);
-  width: calc(.25rem * 10);
+  height: calc(0.25rem * 10);
+  width: calc(0.25rem * 10);
   background: linear-gradient(90deg, #9d27ff 0%, #00e0ff 100%);
-  border-radius: .75rem;
+  border-radius: 0.75rem;
   display: flex;
   align-content: center;
   justify-content: center;
@@ -254,7 +255,7 @@ let timeline = ref([
   display: flex;
   align-content: center;
   justify-content: center;
-  font-size: calc(.25rem * 6.5);
+  font-size: calc(0.25rem * 6.5);
 }
 
 .line-item-inner .lineitem-title-text h4 {
@@ -269,9 +270,9 @@ let timeline = ref([
 }
 
 .line-item-inner .item-position-info {
-  font-size: .875rem;
+  font-size: 0.875rem;
   color: #a0a0b4;
-  //padding: 16px 0;
+  /* //padding: 16px 0; */
 }
 
 .item-position-info .position-datetime {
@@ -295,19 +296,19 @@ let timeline = ref([
 }
 
 .item-position-info .position-ground-list {
-  padding: calc(.25rem * 4) 0;
+  padding: calc(0.25rem * 4) 0;
   list-style-type: disc;
 }
 
 .line-item-inner .item-about-work {
-  border-top: calc(.1rem) solid #5050784d;
-  padding-top: calc(.25rem * 4);
+  border-top: calc(0.1rem) solid #5050784d;
+  padding-top: calc(0.25rem * 4);
 }
 
 .line-item-inner .item-about-work .title {
   color: #a0a0b4;
-  font-size: .75rem;
-  margin-bottom: calc(.25rem * 2);
+  font-size: 0.75rem;
+  margin-bottom: calc(0.25rem * 2);
 }
 
 .line-item-inner .item-about-work ul {
@@ -317,7 +318,7 @@ let timeline = ref([
 .line-item-inner .item-about-work li {
   list-style-type: disc;
   color: #f0f0ff;
-  font-size: .875rem;
+  font-size: 0.875rem;
 }
 
 .line-item-inner .item-about-work li::marker {

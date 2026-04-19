@@ -6,13 +6,14 @@ let infos = reactive({
   imgUrl: "/show_head.png",
   name: "刘彬",
   titleOne: "Nodejs前端工程师",
-  titleTwo: "5年前端开发经验，专注于构建高性能、可维护的 Web 应用。热衷于探索新技术，追求代码质量与用户体验的完美平衡。",
+  titleTwo:
+    "5年前端开发经验，专注于构建高性能、可维护的 Web 应用。热衷于探索新技术，追求代码质量与用户体验的完美平衡。",
   address: "中国-重庆",
   emailAddress: "amongthemasses@163.com",
   phoneNumber: "15809210150",
   githubUrl: "https://github.com/amongthemasses/nodejs",
   websiteUrl: "https://github.com/amongthemasses/nodejs",
-})
+});
 
 const headImg = ref();
 let timer = ref();
@@ -23,7 +24,7 @@ let createAtoA = (src) => {
   a.target = "_blank";
   a.click();
   a.remove();
-}
+};
 onMounted(() => {
   timer.value = setInterval(() => {
     if (headImg.value) {
@@ -35,11 +36,11 @@ onMounted(() => {
         onTop.value = true;
       }
     }
-  }, 2000)
-})
+  }, 2000);
+});
 onDeactivated(() => {
   clearTimeout(timer.value);
-})
+});
 </script>
 
 <template>
@@ -60,32 +61,61 @@ onDeactivated(() => {
       <ul class="infos-call">
         <li class="infos-call-item">
           <p class="infos-call-item-p">
-            <span style="color:#ff1493; font-size: 20px;" class="iconfont icon-dingwei"></span>
+            <span
+              style="color: #ff1493; font-size: 20px"
+              class="iconfont icon-dingwei"
+            ></span>
             <span class="infos-call-item-text">{{ infos.address }}</span>
           </p>
         </li>
         <li class="infos-call-item">
           <p class="infos-call-item-p">
-            <span style="color:#ff1493; font-size: 20px;" class="iconfont icon-youjian"></span>
+            <span
+              style="color: #ff1493; font-size: 20px"
+              class="iconfont icon-youjian"
+            ></span>
             <span class="infos-call-item-text">{{ infos.emailAddress }}</span>
           </p>
         </li>
         <li class="infos-call-item">
           <p class="infos-call-item-p">
-            <span style="color:#ff1493; font-size: 20px;" class="iconfont icon-dianhua"></span>
+            <span
+              style="color: #ff1493; font-size: 20px"
+              class="iconfont icon-dianhua"
+            ></span>
             <span class="infos-call-item-text">{{ infos.phoneNumber }}</span>
           </p>
         </li>
       </ul>
       <ul class="infos-link">
-        <li class="infos-link-item" @click="() => { createAtoA(infos.githubUrl) }">
-          <span class="infos-link-item-span ">
-            <i style="color:#f0f0ff; font-size: 20px;" class="iconfont icon-github"></i>
+        <li
+          class="infos-link-item"
+          @click="
+            () => {
+              createAtoA(infos.githubUrl);
+            }
+          "
+        >
+          <span class="infos-link-item-span">
+            <i
+              style="color: #f0f0ff; font-size: 20px"
+              class="iconfont icon-github"
+            ></i>
           </span>
         </li>
-        <li class="infos-link-item" @click="() => { createAtoA(infos.websiteUrl) }">
+        <li
+          class="infos-link-item"
+          @click="
+            () => {
+              createAtoA(infos.websiteUrl);
+            }
+          "
+        >
           <span class="infos-link-item-span">
-            <i style="color:#f0f0ff; font-size: 20px;" class="iconfont icon-network"></i>
+            <i
+              style="color: #f0f0ff; font-size: 20px"
+              class="iconfont icon-network"
+            ></i>
           </span>
         </li>
       </ul>
@@ -120,7 +150,8 @@ onDeactivated(() => {
   width: 100%;
   border-radius: 50%;
   border: 2px solid #4c1096;
-  box-shadow: 0 5px 24px #8a2be24d,
+  box-shadow:
+    0 5px 24px #8a2be24d,
     0 5px 24px #8a2be24d,
     0 5px 24px #8a2be24d;
   transition: all 2s linear;
@@ -129,19 +160,21 @@ onDeactivated(() => {
 .infos-name {
   color: #f0f0ff;
   font-size: 3.75rem;
-  text-shadow: 0 0 20px #8a2be2cc, 0 0 40px #8a2be266;
+  text-shadow:
+    0 0 20px #8a2be2cc,
+    0 0 40px #8a2be266;
 }
 
 .infos-title-one-box {
   background: #14142866;
   border: 1px solid #5050784d;
   padding: 10px 25px;
-  border-radius: 999px
+  border-radius: 999px;
 }
 
 .infos-title-one {
   font-size: 1.5rem;
-  color: #00bfff
+  color: #00bfff;
 }
 
 .infos-title-two-box {
@@ -202,7 +235,7 @@ onDeactivated(() => {
 .infos-call-item-text {
   text-align: center;
   color: #f0f0ff;
-  font-size: .875rem;
+  font-size: 0.875rem;
 }
 
 .infos-link {

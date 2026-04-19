@@ -1,7 +1,7 @@
 <script setup>
-import {ref} from "vue";
-import {useRouter} from 'vue-router';
-import {message} from "ant-design-vue";
+import { ref } from "vue";
+import { useRouter } from "vue-router";
+import { message } from "ant-design-vue";
 import Background from "@/components/background.vue";
 
 let $router = useRouter();
@@ -20,22 +20,21 @@ const submit = () => {
   if (!/^1[3-9]\d{9}$/.test(phone)) {
     // message.warning('请输入正确的11位手机号码');
     message.warning({
-      content: () => '请输入正确的11位手机号码',
-      class: 'custom-class',
+      content: () => "请输入正确的11位手机号码",
+      class: "custom-class",
       style: {
-        marginTop: '6vh',
+        marginTop: "6vh",
       },
     });
-  }else {
-    $router.push({ path: '/match' });
+  } else {
+    $router.push({ path: "/match" });
   }
-}
+};
 </script>
 
 <template>
   <Background>
     <div class="body">
-
       <div class="bg-glow"></div>
 
       <div class="container">
@@ -54,10 +53,12 @@ const submit = () => {
                 placeholder="请输入11位手机号码"
                 maxlength="11"
                 required
-              >
+              />
             </div>
           </div>
-          <button @click="submit" type="submit" class="btn-primary">查看简历</button>
+          <button @click="submit" type="submit" class="btn-primary">
+            查看简历
+          </button>
         </div>
       </div>
     </div>
@@ -81,8 +82,17 @@ const submit = () => {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 20% 30%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
-  radial-gradient(circle at 80% 70%, rgba(255, 0, 127, 0.15) 0%, transparent 50%);
+  background:
+    radial-gradient(
+      circle at 20% 30%,
+      rgba(138, 43, 226, 0.15) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(255, 0, 127, 0.15) 0%,
+      transparent 50%
+    );
   pointer-events: none;
   z-index: 0;
 }
@@ -124,14 +134,16 @@ const submit = () => {
   border: 1px solid rgba(168, 85, 247, 0.2);
   border-radius: 16px;
   padding: 2.5rem 2rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
-  0 0 30px rgba(168, 85, 247, 0.2);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 0 30px rgba(168, 85, 247, 0.2);
   transition: all 0.3s ease;
 }
 
 .card:hover {
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4),
-  0 0 40px rgba(168, 85, 247, 0.3);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(168, 85, 247, 0.3);
   transform: translateY(-2px);
 }
 
@@ -175,7 +187,7 @@ const submit = () => {
 }
 
 .input-wrapper::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   left: 0;

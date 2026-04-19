@@ -1,6 +1,6 @@
 <script setup>
-import {reactive, ref} from "vue";
-import {message} from "ant-design-vue";
+import { reactive, ref } from "vue";
+import { message } from "ant-design-vue";
 import CtxBG from "@/components/ctx_bg.vue";
 import CtxTitles from "@/components/ctx_titles.vue";
 
@@ -13,59 +13,58 @@ message.config({
 
 let bigTitle = ref("让我们开始对话");
 let smTitle = ref("寻找优秀的前端工程师？或是想要交流技术？随时欢迎联系我！");
-let contactList = reactive(
-  [
-    {name: "微信", value: "123", className: "iconfont icon-weixin"},
-    {name: "电话", value: "456", className: "iconfont icon-dianhua"},
-    {name: "邮箱", value: "789", className: "iconfont icon-youxiang"},
-  ]
-);
+let contactList = reactive([
+  { name: "微信", value: "123", className: "iconfont icon-weixin" },
+  { name: "电话", value: "456", className: "iconfont icon-dianhua" },
+  { name: "邮箱", value: "789", className: "iconfont icon-youxiang" },
+]);
 const copyText = async (text, name) => {
   try {
     if (navigator.clipboard) {
       await navigator.clipboard.writeText(text);
       message.success(`new 复制成功：「${text}」 `);
     } else {
-      const input = document.createElement('input')
-      input.style.position = 'fixed'
-      input.style.opacity = '0'
-      input.value = text
-      document.body.appendChild(input)
-      input.select()
-      input.setSelectionRange(0, input.value.length)
-      const result = document.execCommand('copy')
-      document.body.removeChild(input)
+      const input = document.createElement("input");
+      input.style.position = "fixed";
+      input.style.opacity = "0";
+      input.value = text;
+      document.body.appendChild(input);
+      input.select();
+
+      input.setSelectionRange(0, input.value.length);
+      const result = document.execCommand("copy");
+      document.body.removeChild(input);
     }
     message.success(`old 复制成功：「${text}」 `);
   } catch (err) {
     message.error("new 复制失败，请重试！");
     console.error(err);
   }
-
-}
+};
 </script>
 
 <template>
   <CtxBG>
     <div class="container">
       <div class="contact-inner">
-        <CtxTitles :big-title="bigTitle" :sm-title="smTitle"/>
+        <CtxTitles :big-title="bigTitle" :sm-title="smTitle" />
         <div class="contact-btns">
           <div
             class="btn"
             v-for="(item, index) in contactList"
             :key="index"
-            @click="()=>copyText(item.value,item.name)"
+            @click="() => copyText(item.value, item.name)"
           >
             <span :class="item.className"></span>
             <div>{{ item.name }}</div>
           </div>
         </div>
         <div class="contact-tip">
-          <p class="tip">通常会在 <span class="gradient-text">24 小时内</span> 回复 ⚡</p>
+          <p class="tip">
+            通常会在 <span class="gradient-text">24 小时内</span> 回复 ⚡
+          </p>
         </div>
       </div>
-
     </div>
   </CtxBG>
 </template>
@@ -93,7 +92,6 @@ const copyText = async (text, name) => {
   .btn {
     width: 100%;
   }
-
 }
 
 @media (min-width: 769px) and (max-width: 991px) {
@@ -114,11 +112,11 @@ const copyText = async (text, name) => {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 40px
+  gap: 40px;
 }
 
 .btn {
-  background: linear-gradient(90deg, #8A2BE2, #00BFFF);
+  background: linear-gradient(90deg, #8a2be2, #00bfff);
   color: white;
   border: none;
   border-radius: 50px;
@@ -135,7 +133,7 @@ const copyText = async (text, name) => {
 }
 
 .contact-btns .btn .iconfont {
-  font-size: calc(.25rem * 5);
+  font-size: calc(0.25rem * 5);
 }
 
 /* 按钮hover霓虹效果 */
@@ -153,6 +151,6 @@ const copyText = async (text, name) => {
 }
 
 .contact-tip .tip {
-  font-size: .875rem;
+  font-size: 0.875rem;
 }
 </style>

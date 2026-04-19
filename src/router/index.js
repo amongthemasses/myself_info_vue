@@ -5,7 +5,7 @@ const router = createRouter({
   routes: [
     {
       path: "/:pathMatch(.*)*",
-      name:"notFound",
+      name: "notFound",
       component: () => import('@/views/ont_found.vue'),
     },
     {
@@ -15,25 +15,24 @@ const router = createRouter({
       // meta: { transition: 'slide-left' },
     },
     {
-      path:"/match",
-      name:"match",
-      component:()=>import("@/views/match.vue"),
-      // meta: { transition: 'slide-left' },
+      path: "/match",
+      name: "match",
+      component: () => import("@/views/match.vue"),
     },
     {
-      path:"/show",
-      name:"show",
-      component:()=>import("@/views/show.vue"),
+      path: "/show",
+      name: "show",
+      component: () => import("@/views/show.vue"),
     },
     {
-      path:"/enter_code",
-      name:"enterCode",
-      component:()=>import("@/views/enter_code.vue"),
+      path: "/enter_code",
+      name: "enterCode",
+      component: () => import("@/views/enter_code.vue"),
     },
     {
-      path:"/setting",
-      name:"setting",
-      component:()=>import("@/views/setting.vue"),
+      path: "/setting",
+      name: "setting",
+      component: () => import("@/views/setting.vue"),
     }
   ],
 })

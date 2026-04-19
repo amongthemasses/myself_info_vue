@@ -1,34 +1,34 @@
 <script setup>
-import {reactive, ref, onUnmounted, onMounted, watch} from 'vue'
+import { reactive, ref, onUnmounted, onMounted, watch } from "vue";
 import CtxBG from "@/components/ctx_bg.vue";
-import ShowHome from '@/components/show_home.vue';
-import ShowSkills from '@/components/show_skills.vue';
-import ShowProject from '@/components/show_project.vue';
-import ShowExp from '@/components/show_exp.vue';
-import ShowContact from "@/components/show_contact.vue"
+import ShowHome from "@/components/show_home.vue";
+import ShowSkills from "@/components/show_skills.vue";
+import ShowProject from "@/components/show_project.vue";
+import ShowExp from "@/components/show_exp.vue";
+import ShowContact from "@/components/show_contact.vue";
 
 let liList = reactive([
-  {name: "首页", id: "show_home", icon: "iconfont icon-home"},
-  {name: "技能", id: "show_skills", icon: "iconfont icon-html "},
-  {name: "项目", id: "show_project", icon: "iconfont icon-xunzhang"},
-  {name: "经历 ", id: "show_exp", icon: "iconfont icon-gongwenbao"},
-  {name: "联系", id: "show_contact", icon: "iconfont icon-youjian"},
+  { name: "首页", id: "show_home", icon: "iconfont icon-home" },
+  { name: "技能", id: "show_skills", icon: "iconfont icon-html " },
+  { name: "项目", id: "show_project", icon: "iconfont icon-xunzhang" },
+  { name: "经历 ", id: "show_exp", icon: "iconfont icon-gongwenbao" },
+  { name: "联系", id: "show_contact", icon: "iconfont icon-youjian" },
 ]);
-let copyright = ref("刘彬")
+let copyright = ref("刘彬");
 
 const scrollToAnchor = (item) => {
   let element = document.getElementById(item.id);
   if (element) {
-    element.scrollIntoView({behavior: "smooth"});
+    element.scrollIntoView({ behavior: "smooth" });
   }
-}
+};
 let scrollTop = ref(0);
 let scrollBox = ref();
-const currentAnchor = ref('show_home');
+const currentAnchor = ref("show_home");
 
 const onScroll = () => {
   scrollTop.value = scrollBox.value.scrollTop;
-}
+};
 
 watch(scrollTop, (val) => {
   for (const item of liList) {
@@ -41,41 +41,40 @@ watch(scrollTop, (val) => {
       break;
     }
   }
-
-})
+});
 
 onMounted(() => {
-  scrollBox.value.addEventListener('scroll', onScroll);
+  scrollBox.value.addEventListener("scroll", onScroll);
   onScroll();
-})
+});
 
 onUnmounted(() => {
-  scrollBox.value.removeEventListener('scroll', onScroll);
-})
+  scrollBox.value.removeEventListener("scroll", onScroll);
+});
 </script>
 
 <template>
   <div ref="scrollBox" class="outside-box">
     <div id="show_home" class="container show-home">
-      <ShowHome/>
+      <ShowHome />
     </div>
     <div id="show_skills" class="container show-skills">
-      <ShowSkills/>
+      <ShowSkills />
     </div>
     <div id="show_project" class="container show-project">
-      <ShowProject/>
+      <ShowProject />
     </div>
     <div id="show_exp" class="container show-exp">
-      <ShowExp/>
+      <ShowExp />
     </div>
     <div id="show_contact" class="container show-contact">
-      <ShowContact/>
+      <ShowContact />
     </div>
-    <div style="color: #a0a0b4;">
+    <div style="color: #a0a0b4">
       <CtxBG>
-        <p
-          style="display: flex; justify-content: center;font-size: .875rem"
-        >© 2026 {{ copyright }}. Made with ❤️ using Vue + Nodejs</p>
+        <p style="display: flex; justify-content: center; font-size: 0.875rem">
+          © 2026 {{ copyright }}. Made with ❤️ using Vue + Nodejs
+        </p>
       </CtxBG>
     </div>
   </div>
@@ -85,7 +84,7 @@ onUnmounted(() => {
         <div
           class="nav-item-span"
           @click="() => scrollToAnchor(item)"
-          :class="currentAnchor === item.id?'nav-item-span-active ':''"
+          :class="currentAnchor === item.id ? 'nav-item-span-active ' : ''"
         >
           <span :class="item.icon"></span>
           <span v-show="currentAnchor === item.id">{{ item.name }}</span>
@@ -93,7 +92,6 @@ onUnmounted(() => {
       </li>
     </ul>
   </div>
-
 </template>
 
 <style scoped>
@@ -116,7 +114,7 @@ onUnmounted(() => {
 
 .nav-bar {
   list-style: none;
-  padding: .5rem 1.5rem;
+  padding: 0.5rem 1.5rem;
   border-radius: 500px;
   display: flex;
   gap: 25px;
@@ -124,27 +122,25 @@ onUnmounted(() => {
   justify-content: center;
   color: #a0a0b4;
   font-weight: 600;
-  font-size: .875rem;
+  font-size: 0.875rem;
   background: #14142866;
   border: 1px solid #5050784d;
   box-shadow: 0 3px 24px 0 #8a2be280;
 }
 
 .nav-item-span {
-
-  //height: 2.2rem;
+  /* //height: 2.2rem; */
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: .2rem;
+  gap: 0.2rem;
   border: none;
-
 }
 
 .nav-item-span-active {
   color: #fff;
-  background: linear-gradient(90deg, #8A2BE2, #00BFFF);
-  padding: .5rem 1.5rem;
+  background: linear-gradient(90deg, #8a2be2, #00bfff);
+  padding: 0.5rem 1.5rem;
   border-radius: 50px;
 }
 
@@ -154,7 +150,7 @@ onUnmounted(() => {
 }
 
 .nav-item-span .iconfont {
-  font-size: calc(.25rem * 6);
+  font-size: calc(0.25rem * 6);
 }
 
 .outside-box {

@@ -1,21 +1,20 @@
 <script setup>
-import {ref} from "vue";
-import {useRouter, useRoute} from "vue-router";
+import { ref } from "vue";
+import { useRouter, useRoute } from "vue-router";
 import Background from "@/components/background.vue";
 
 const $router = useRouter();
 const $route = useRoute();
 
-
 const onClickShow = () => {
-  $router.push("/show")
-}
+  $router.push("/show");
+};
 const onClickSetting = () => {
-  $router.push("/enter_code")
-}
+  $router.push("/enter_code");
+};
 const goBack = () => {
   $router.back();
-}
+};
 </script>
 
 <template>
@@ -35,7 +34,13 @@ const goBack = () => {
         <div class="card">
           <div class="options-group">
             <a @click="onClickShow" class="option-btn view">
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#06b6d4" stroke-width="2">
+              <svg
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#06b6d4"
+                stroke-width="2"
+              >
                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
                 <circle cx="12" cy="12" r="3"></circle>
               </svg>
@@ -45,9 +50,19 @@ const goBack = () => {
               </div>
             </a>
             <a @click="onClickSetting" class="option-btn edit">
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="2">
-                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
-                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+              <svg
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#ec4899"
+                stroke-width="2"
+              >
+                <path
+                  d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
+                ></path>
+                <path
+                  d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"
+                ></path>
               </svg>
               <div class="text">
                 <div>修改简历</div>
@@ -83,8 +98,17 @@ const goBack = () => {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 20% 30%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
-  radial-gradient(circle at 80% 70%, rgba(255, 0, 127, 0.15) 0%, transparent 50%);
+  background:
+    radial-gradient(
+      circle at 20% 30%,
+      rgba(138, 43, 226, 0.15) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(255, 0, 127, 0.15) 0%,
+      transparent 50%
+    );
   pointer-events: none;
   z-index: 0;
 }
@@ -133,14 +157,16 @@ const goBack = () => {
   border: 1px solid rgba(168, 85, 247, 0.2);
   border-radius: 16px;
   padding: 2.5rem 2rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3),
-  0 0 30px rgba(168, 85, 247, 0.2);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    0 0 30px rgba(168, 85, 247, 0.2);
   transition: all 0.3s ease;
 }
 
 .card:hover {
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4),
-  0 0 40px rgba(168, 85, 247, 0.3);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.4),
+    0 0 40px rgba(168, 85, 247, 0.3);
   transform: translateY(-2px);
 }
 
